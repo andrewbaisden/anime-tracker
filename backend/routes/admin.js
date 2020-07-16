@@ -9,4 +9,6 @@ router.get('/edit-anime', adminController.getEditAnime);
 
 router.post('/add-anime', adminController.postAnime);
 
+router.get('/:animeId', adminController.getAnime);
+
 module.exports = router;

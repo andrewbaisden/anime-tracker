@@ -7,5 +7,16 @@
 	</head>
 	<body>
 		<h1>Home Page</h1>
+
+		<main>
+			<% anime.forEach(data => { %>
+				<ul>
+					<li><h1><a href="/<%= data.id %>"><%= data.name %></a></h1></li>
+					<li><img src="<%= data.image %>" alt="<%= data.name %>" /></h1></li>
+					<li><p><%= data.description %></p></li>
+				</ul>
+			<% }) %>
+		</main>
+
 	</body>
 </html>
