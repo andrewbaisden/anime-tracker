@@ -1,0 +1,23 @@
+{
+	"name": "backend",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node app.js",
+		"dev": "nodemon app.js",
+		"servers": "concurrently \"npm run dev\" \"cd.. /frontend && npm run start\""
+	},
+	"keywords": [],
+	"author": "Andrew Baisden",
+	"license": "MIT",
+	"dependencies": {
+		"concurrently": "^5.2.0",
+		"cors": "^2.8.5",
+		"dotenv": "^8.2.0",
+		"ejs": "^3.1.3",
+		"express": "^4.17.1",
+		"mongoose": "^5.9.24",
+		"nodemon": "^2.0.4"
+	}
+}
