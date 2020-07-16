@@ -12,6 +12,15 @@
 			<h1><%= anime.name %></h1>
 			<img src="<%= anime.image %>" alt="<%= anime.name %>" />
 			<p><%= anime.description %></p>
+
+			<div>
+				<form method="POST" action="/delete">
+					<div>
+						<input type="hidden" value="<%= anime.id %>" name="animeId" />
+						<button>Delete</button>
+					</div>
+				</form>
+			</div>
 		</main>
 	</body>
 </html>

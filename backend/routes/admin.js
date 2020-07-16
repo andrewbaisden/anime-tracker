@@ -11,4 +11,6 @@ router.post('/add-anime', adminController.postAnime);
 
 router.get('/:animeId', adminController.getAnime);
 
+router.post('/delete', adminController.postDelete);
+
 module.exports = router;
