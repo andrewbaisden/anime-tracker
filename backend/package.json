@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "node app.js",
 		"dev": "nodemon app.js",
-		"servers": "concurrently \"npm run dev\" \"cd.. /frontend && npm run start\""
+		"servers": "concurrently \"npm run dev\" \"cd ../frontend && npm run start\""
 	},
 	"keywords": [],
 	"author": "Andrew Baisden",
