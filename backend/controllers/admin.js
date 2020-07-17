@@ -24,8 +24,30 @@ exports.getAnime = async (req, res) => {
 	}
 };
 
-exports.getEditAnime = (req, res) => {
-	res.status(200).render('edit-anime');
+exports.getAddAnime = (req, res) => {
+	res.status(200).render('edit-anime', { editing: false });
+};
+
+exports.getEditAnime = async (req, res) => {
+	const animeId = req.params.animeId;
+
+	const editMode = req.query.edit;
+
+	if (!editMode) {
+		return res.redirect('/');
+	}
+
+	const anime = await Anime.findById(animeId);
+
+	try {
+		if (!animeId) {
+			return res.redirect('/');
+		}
+		console.log(anime);
+		res.status(200).render('edit-anime', { anime: anime, editing: editMode });
+	} catch (error) {
+		console.log(error);
+	}
 };
 
 exports.postAnime = (req, res) => {
@@ -35,6 +57,27 @@ exports.postAnime = (req, res) => {
 	anime.save();
 	console.log('Anime Added to the database');
 	res.status(201).redirect('/');
+};
+
+exports.postEditAnime = (req, res) => {
+	const animeId = req.body.animeId;
+	const { name, image, description } = req.body;
+
+	Anime.findById(animeId)
+		.then((anime) => {
+			anime.name = name;
+			anime.image = image;
+			anime.description = description;
+
+			return anime.save();
+		})
+		.then(() => {
+			console.log('Item Updated');
+			res.status(201).redirect('/');
+		})
+		.catch((err) => {
+			console.log(err);
+		});
 };
 
 exports.postDelete = async (req, res) => {

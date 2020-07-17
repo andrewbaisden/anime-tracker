@@ -5,9 +5,13 @@ const router = express.Router();
 
 router.get('/', adminController.getIndex);
 
-router.get('/edit-anime', adminController.getEditAnime);
+router.get('/add-anime', adminController.getAddAnime);
+
+router.get('/edit-anime/:animeId', adminController.getEditAnime);
 
 router.post('/add-anime', adminController.postAnime);
+
+router.post('/edit-anime', adminController.postEditAnime);
 
 router.get('/:animeId', adminController.getAnime);
 
