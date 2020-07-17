@@ -5,7 +5,11 @@ exports.getIndex = async (req, res) => {
 
 	try {
 		console.log(anime);
-		res.status(200).render('index', { anime: anime });
+		// Data rendered as an object and passed down into index.ejs
+		// res.status(200).render('index', { anime: anime });
+
+		// Data returned as json so a fetch/axios requst can get it
+		res.json(anime);
 	} catch (error) {
 		console.log(error);
 	}
@@ -56,7 +60,9 @@ exports.postAnime = (req, res) => {
 	const anime = new Anime({ name: name, image: image, description: description });
 	anime.save();
 	console.log('Anime Added to the database');
-	res.status(201).redirect('/');
+
+	// Updated the home route to the React App index page
+	res.status(201).redirect('http://localhost:3000/');
 };
 
 exports.postEditAnime = (req, res) => {
