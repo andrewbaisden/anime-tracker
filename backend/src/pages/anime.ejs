@@ -3,11 +3,15 @@
 <main>
 	<div class="container-anime">
 		<div><h1>Anime</h1></div>
-		<div>
-			<h1><%= anime.name %></h1>
-			<img src="<%= anime.image %>" alt="<%= anime.name %>" />
-			<p><%= anime.description %></p>
+		<div class="anime-content">
+			<div><img src="<%= anime.image %>" alt="<%= anime.name %>" /></div>
+			<div>
+				<h2><%= anime.name %></h2>
 
+				<p><%= anime.description %></p>
+			</div>
+		</div>
+		<div class="anime-edit-delete">
 			<div>
 				<form method="POST" action="/delete">
 					<div>

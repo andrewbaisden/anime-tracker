@@ -40,13 +40,16 @@ header {
 header h1 {
     color: #ffffff;
     text-transform: uppercase;
+    margin: 2rem 0 2rem 0;
 }
 
 header a {
-    display: block;
+    display: grid;
+    align-items: center;
     color: #ffffff;
     text-decoration: none;
     background: #ce5292;
+    height: 4rem;
     text-transform: uppercase;
     transition: background 1s;
 }
@@ -58,9 +61,9 @@ header a:hover {
 .container {
     display: grid;
     margin: 0 auto;
-    max-width: 120rem;
+    /* max-width: 120rem; */
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     border-radius: 0.7rem;
     background: #211039;
     -webkit-box-shadow: 0px 0px 26px -2px rgba(36, 4, 92, 1);
@@ -85,7 +88,7 @@ main {
     opacity: 0.8;
 }
 
-ul li:nth-child(4) {
+ul li:nth-child(3) {
     display: grid;
     justify-content: center;
 }
@@ -168,9 +171,56 @@ textarea {
 
 .container-anime {
     display: grid;
-    margin: 0 auto;
+    margin: 0 0 5rem 0;
     max-width: 120rem;
     width: 100%;
+    color: #ffffff;
+}
+
+.container-anime h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding: 2rem;
+}
+
+.anime-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    padding: 2rem;
+}
+
+.anime-content img {
+    width: 100%;
+    max-width: 50rem;
+}
+
+.anime-edit-delete {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 16rem;
+    height: 4rem;
+    padding: 2rem;
+}
+
+.anime-edit-delete button,
+.anime-edit-delete a {
+    display: block;
+    background: #371D5E;
+    border: none;
+    color: #ffffff;
+    padding: 1rem;
+    cursor: pointer;
+    width: 8rem;
+    height: 4rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background 1s, border 1s;
+}
+
+.anime-edit-delete button:hover,
+.anime-edit-delete a:hover {
+    background: #1d0d36;
 }
 
 @media screen and (max-width: 900px) {
@@ -180,6 +230,11 @@ textarea {
 
     .container {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .anime-content {
+        grid-template-columns: repeat(1, 1fr);
+
     }
 }
 
