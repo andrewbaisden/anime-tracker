@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
+import './App.css';
 
 const App = () => {
 	useEffect(() => {
@@ -22,34 +23,41 @@ const App = () => {
 
 	return (
 		<Fragment>
-			<h1>Anime Home</h1>
+			<header>
+				<h1>My Anime List: React Front End</h1>
+				<a href="http://localhost:8080">View All Anime</a>
+				<a href="http://localhost:8080/add-anime">Add New Anime &#x27A2;</a>
+			</header>
 
-			<div>
+			<div className="container">
 				{loading ? (
-					<div>Loading</div>
+					<div>
+						<p>No data to load</p>
+					</div>
 				) : (
 					<div>
 						{anime.map((data) => (
 							<div key={data._id}>
-								<ul>
-									<li>
-										<h1>
-											<a href="/{data.id}">{data._id}</a>
-										</h1>
-									</li>
-									<li>
-										<img src={data.image} alt={data.name} />
-									</li>
-									<li>
-										<p>{data.description}</p>
-									</li>
-								</ul>
+								<main>
+									<ul className="anime">
+										<li>
+											<img src={data.image} alt={data.name} className="anime-img" />
+										</li>
+										<li>
+											<h1>{data.name}</h1>
+										</li>
+
+										<li>
+											<a href={data._id}>View Anime &#x21DB;</a>
+										</li>
+									</ul>
+								</main>
 							</div>
 						))}
 					</div>
 				)}
 			</div>
-			<div>
+			{/* <div>
 				<h1>Add New Anime</h1>
 				<form method="POST" action="http://localhost:8080/add-anime">
 					<div>
@@ -69,7 +77,7 @@ const App = () => {
 						<button type="submit">Add Anime</button>
 					</div>
 				</form>
-			</div>
+			</div> */}
 		</Fragment>
 	);
 };

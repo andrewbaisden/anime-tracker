@@ -82,7 +82,7 @@ exports.postEditAnime = (req, res) => {
 		})
 		.then(() => {
 			console.log('Item Updated');
-			res.status(201).redirect('/');
+			res.status(201).redirect(`/${animeId}`);
 		})
 		.catch((err) => {
 			console.log(err);
