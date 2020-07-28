@@ -6,10 +6,10 @@ exports.getIndex = async (req, res) => {
 	try {
 		console.log(anime);
 		// Data rendered as an object and passed down into index.ejs
-		// res.status(200).render('index', { anime: anime });
+		res.status(200).render('index', { anime: anime });
 
 		// Data returned as json so a fetch/axios requst can get it
-		res.json(anime);
+		// res.json(anime);
 	} catch (error) {
 		console.log(error);
 	}
@@ -62,7 +62,10 @@ exports.postAnime = (req, res) => {
 	console.log('Anime Added to the database');
 
 	// Updated the home route to the React App index page
-	res.status(201).redirect('http://localhost:3000/');
+	// res.status(201).redirect('http://localhost:3000/');
+
+	// Home route for ejs index page
+	res.status(201).redirect('/');
 };
 
 exports.postEditAnime = (req, res) => {

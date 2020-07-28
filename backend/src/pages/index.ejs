@@ -1,22 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Home</title>
-	</head>
-	<body>
-		<h1>Home Page</h1>
+<%- include('header'); -%>
 
-		<main>
-			<% anime.forEach(data => { %>
-				<ul>
-					<li><h1><a href="/<%= data.id %>"><%= data.name %></a></h1></li>
-					<li><img src="<%= data.image %>" alt="<%= data.name %>" /></h1></li>
-					<li><p><%= data.description %></p></li>
-				</ul>
-			<% }) %>
-		</main>
+<main>
+	<div class="container">
+		<% anime.forEach(data => { %>
+		<ul class="anime">
+			<li><img src="<%= data.image %>" alt="<%= data.name %>" class="anime-img" /></li>
+			<li>
+				<h1><%= data.name %></h1>
+			</li>
 
-	</body>
-</html>
+			<li><p><%= data.description %></p></li>
+			<li>
+				<a href="/<%= data.id %>">View Anime &#x21DB;</a>
+			</li>
+		</ul>
+		<% }) %>
+	</div>
+</main>
+<%- include('footer'); -%>

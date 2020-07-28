@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Anime</title>
-	</head>
-	<body>
-		<h1>Anime</h1>
+<%- include('header'); -%>
 
-		<main>
+<main>
+	<div class="container-anime">
+		<div><h1>Anime</h1></div>
+		<div>
 			<h1><%= anime.name %></h1>
 			<img src="<%= anime.image %>" alt="<%= anime.name %>" />
 			<p><%= anime.description %></p>
@@ -24,6 +19,7 @@
 			<div>
 				<a href="/edit-anime/<%= anime.id %>?edit=true">Edit</a>
 			</div>
-		</main>
-	</body>
-</html>
+		</div>
+	</div>
+</main>
+<%- include('footer'); -%>

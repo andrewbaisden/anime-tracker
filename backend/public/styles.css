@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Darker Grotesque', sans-serif;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#613aa1+0,3f226b+50,381d5f+59,351c5c+100 */
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#613aa1+1,3f226b+50,381d5f+59,351c5c+100 */
+    background: #613aa1;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #613aa1 1%, #3f226b 50%, #381d5f 59%, #351c5c 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #613aa1 1%, #3f226b 50%, #381d5f 59%, #351c5c 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #613aa1 1%, #3f226b 50%, #381d5f 59%, #351c5c 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#613aa1', endColorstr='#351c5c', GradientType=1);
+    /* IE6-9 */
+
+
+}
+
+header {
+    display: grid;
+    justify-content: center;
+    padding: 0 2rem 0 2rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+header h1 {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+header a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    background: #ce5292;
+    text-transform: uppercase;
+    transition: background 1s;
+}
+
+header a:hover {
+    background: #f880be;
+}
+
+.container {
+    display: grid;
+    margin: 0 auto;
+    max-width: 120rem;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    border-radius: 0.7rem;
+    background: #211039;
+    -webkit-box-shadow: 0px 0px 26px -2px rgba(36, 4, 92, 1);
+    -moz-box-shadow: 0px 0px 26px -2px rgba(36, 4, 92, 1);
+    box-shadow: 0px 0px 26px -2px rgba(36, 4, 92, 1);
+}
+
+main {
+    margin-bottom: 2rem;
+}
+
+.anime {
+    border-right: 0.5px solid #7760A0;
+    list-style: none;
+    transition: background 1s, opacity 1s;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.anime:hover {
+    background: #7760A0;
+    opacity: 0.8;
+}
+
+ul li:nth-child(4) {
+    display: grid;
+    justify-content: center;
+}
+
+/* ul:last-child {
+    border-right: none;
+} */
+
+.anime-img {
+    width: 100%;
+    height: 40rem;
+}
+
+.anime h1 {
+    font-size: 2rem;
+    height: 8rem;
+}
+
+.anime p {
+    height: 6rem;
+}
+
+.anime h1,
+p {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    color: #ffffff;
+}
+
+.anime a {
+    display: block;
+    border: 0.1rem solid #9C3E6E;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    max-width: 14rem;
+    width: 100%;
+    transition: background 1s, border 1s;
+}
+
+.anime a:hover {
+    background: #ce5292;
+    border: 0.1rem solid #c54989;
+}
+
+.container-form {
+    display: grid;
+    margin: 0 auto;
+    max-width: 120rem;
+    width: 100%;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.container-form form input,
+textarea {
+    padding: 1rem;
+}
+
+.container-form form div {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.container-form form button {
+    display: block;
+    background: #ce5292;
+    border: none;
+    color: #ffffff;
+    padding: 1rem;
+    margin: 2rem 0 0 0;
+    cursor: pointer;
+    transition: background 1s, border 1s;
+}
+
+.container-form form button:hover {
+    background: #f880be;
+}
+
+.container-anime {
+    display: grid;
+    margin: 0 auto;
+    max-width: 120rem;
+    width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    /* body {
+        background: red;
+    } */
+
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    /* body {
+        background: yellow;
+    } */
+
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

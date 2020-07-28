@@ -1,36 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>
-			<% if(editing){ %>Edit Anime<% } else { %>Add Anime<% } %>
-		</title>
-	</head>
-	<body>
-		<h1><% if(editing){ %>Edit Anime<% } else { %>Add Anime<% } %></h1>
+<%- include('header'); -%>
+<div class="container-form">
+	<h1><% if(editing){ %>Edit Anime<% } else { %>Add Anime<% } %></h1>
 
-		<form method="POST" action="/<% if(editing){ %>edit-anime<% } else { %>add-anime<% } %>">
-			<div>
-				<label>Name</label>
-				<input type="text" name="name" value="<% if(editing){ %><%= anime.name %><% } %>" required />
-			</div>
-			<div>
-				<label>Image</label>
-				<input type="text" name="image" value="<% if(editing){ %><%= anime.image %><% } %>" required />
-			</div>
-			<div>
-				<label>Description</label>
-				<input type="text" name="description" value="<% if(editing){ %><%= anime.description %><% } %>" required />
-			</div>
-			<% if(editing){ %>
-			<div>
-				<input type="hidden" name="animeId" value="<%= anime.id %>" />
-			</div>
-			<% } %>
-			<div>
-				<button type="submit"><% if(editing){ %>Edit Anime<% } else { %>Add Anime<% } %></button>
-			</div>
-		</form>
+	<form method="POST" action="/<% if(editing){ %>edit-anime<% } else { %>add-anime<% } %>">
+		<div>
+			<label>Name</label>
+			<input type="text" name="name" value="<% if(editing){ %><%= anime.name %><% } %>" required />
+		</div>
+		<div>
+			<label>Image</label>
+			<input type="text" name="image" value="<% if(editing){ %><%= anime.image %><% } %>" required />
+		</div>
+		<div>
+			<label>Description</label>
+			<textarea type="text" name="description" rows="10" cols="50" required ><% if(editing){ %><%= anime.description %><% } %></textarea>
+		</div>
+		<% if(editing){ %>
+		<div>
+			<input type="hidden" name="animeId" value="<%= anime.id %>" />
+		</div>
+		<% } %>
+		<div>
+			<button type="submit"><% if(editing){ %>Edit Anime<% } else { %>Add Anime<% } %></button>
+		</div>
+	</form>
+</div>
+		<%- include('footer'); -%>
 	</body>
 </html>
