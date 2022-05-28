@@ -1,6 +1,6 @@
 # Anime Tracker
 
-![Anime Tracker](https://res.cloudinary.com/d74fh3kw/image/upload/v1595954392/anime-tracker_tzqngx.jpg 'Anime Tracker')
+![Anime Tracker](/img/anime-tracker.jpeg 'Anime Tracker')
 
 ## Installation
 
